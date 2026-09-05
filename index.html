@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Babita Mishra — Curriculum Vitae</title>
+<style>
+  :root {
+    --accent: #1f6f6b;       /* deep teal */
+    --accent-soft: #e7f2f1;
+    --ink: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: #f4f4f4;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 24px auto;
+    background: #ffffff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    background: linear-gradient(135deg, #14524f 0%, #1f6f6b 55%, #2e8b86 100%);
+    color: #fff;
+    padding: 42px 48px 36px;
+  }
+  header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+  }
+  header .role {
+    margin-top: 10px;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #cfe9e6;
+  }
+  header .tagline {
+    margin-top: 14px;
+    font-size: 14.5px;
+    max-width: 60ch;
+    color: #eaf6f5;
+  }
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+    margin-top: 22px;
+    font-size: 13.5px;
+  }
+  .contact span { color: #d9efed; }
+  .contact b { color: #ffffff; font-weight: 600; }
+
+  /* ---------- Body ---------- */
+  main { padding: 34px 48px 40px; }
+
+  section { margin-bottom: 30px; }
+  section:last-child { margin-bottom: 0; }
+
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* Profile */
+  .profile {
+    font-size: 15px;
+    color: #374151;
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    padding: 16px 20px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Experience */
+  .job { margin-bottom: 20px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .job-title { font-size: 15.5px; font-weight: 700; color: var(--ink); }
+  .job-org {
+    font-size: 13.5px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 1px;
+  }
+  .job-date {
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .job p { font-size: 14px; color: #4b5563; margin-top: 6px; }
+  ul.bullets { margin: 8px 0 0 18px; }
+  ul.bullets li { font-size: 14px; color: #4b5563; margin-bottom: 4px; }
+
+  /* Education */
+  .edu { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+  .edu:last-child { margin-bottom: 0; }
+  .edu .deg { font-size: 15px; font-weight: 700; }
+  .edu .inst { font-size: 13.5px; color: var(--muted); margin-top: 1px; }
+  .edu .yr { font-size: 13px; color: var(--muted); white-space: nowrap; }
+
+  /* Skills / languages */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .skill-block h3 {
+    font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 8px; font-weight: 600;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip {
+    font-size: 12.5px; background: var(--accent-soft); color: #14524f;
+    border: 1px solid #cfe3e1; padding: 4px 11px; border-radius: 20px;
+  }
+  .lang-list { font-size: 14px; color: #374151; }
+  .lang-list div { margin-bottom: 5px; }
+  .lang-list b { color: var(--ink); }
+
+  /* Highlights */
+  .highlight { display: flex; gap: 12px; margin-bottom: 12px; font-size: 14px; color: #374151; }
+  .highlight .dot { color: var(--accent); font-weight: 700; }
+
+  footer {
+    padding: 18px 48px;
+    background: #fafafa;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .print-btn {
+    position: fixed; top: 18px; right: 18px;
+    background: var(--accent); color: #fff; border: none;
+    padding: 10px 18px; border-radius: 24px; font-size: 13px;
+    cursor: pointer; box-shadow: 0 4px 14px rgba(31,111,107,.35);
+    font-family: inherit;
+  }
+  .print-btn:hover { background: #14524f; }
+
+  /* ---------- Print ---------- */
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; border-radius: 0; max-width: none; }
+    .print-btn { display: none; }
+    header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .chip, .profile { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .job { page-break-inside: avoid; }
+  }
+  @media screen and (max-width: 640px) {
+    header, main, footer { padding-left: 24px; padding-right: 24px; }
+    .job-head, .edu { flex-direction: column; gap: 2px; }
+    .job-date, .edu .yr { white-space: normal; }
+    .cols { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<button class="print-btn" onclick="window.print()">⬇ Print / Save as PDF</button>
+
+<div class="page">
+  <header>
+    <h1>Babita Mishra</h1>
+    <div class="role">Educator &nbsp;·&nbsp; Applied Linguist &nbsp;·&nbsp; School Founder</div>
+    <div class="tagline">Multilingual educator specialising in play-based, phonetics-led language teaching — building confident, curious learners through games, song and story.</div>
+  </header>
+
+  <main>
+    <!-- Profile -->
+    <section>
+      <h2>Profile</h2>
+      <p class="profile">
+        A passionate educator and applied linguist with three decades of experience teaching children and building
+        schools. A specialist in multilingual, play-based learning — using games, phonetics and story to make language
+        come alive — I have founded and led two schools in India, taught in an international classroom, and championed
+        Indian classical culture among young people through SPIC MACAY. I bring warmth, structure and a deep love of
+        language to every learner I meet.
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-title">Teaching Partner</div>
+            <div class="job-org">Malvern College · Hong Kong</div>
+          </div>
+          <div class="job-date">2021 – Present</div>
+        </div>
+        <ul class="bullets">
+          <li>Support classroom teaching and learning alongside subject teachers, nurturing each child's confidence and independence.</li>
+          <li>Use play-based, multilingual methods to help young learners build strong foundations in language and literacy.</li>
+          <li>Foster a warm, inclusive environment where children feel safe to explore, question and grow.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-title">Director</div>
+            <div class="job-org">DKM Consult Pvt Ltd · Bhubaneswar, India</div>
+          </div>
+          <div class="job-date">2014 – Present</div>
+        </div>
+        <p>Direct day-to-day operations of a consulting firm established from the ground up — overseeing strategy, client relationships and administration. <span style="color:var(--muted)">www.consultdkm.co.in</span></p>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-title">National Convenor — Cinema Classics Module</div>
+            <div class="job-org">SPIC MACAY · Voluntary · Pan-India</div>
+          </div>
+          <div class="job-date">2007 – Present</div>
+        </div>
+        <ul class="bullets">
+          <li>Lead the Cinema Classics module nationally, bringing classic Indian cinema to school and college audiences across the country.</li>
+          <li>Previously served as State Coordinator (Odisha) and Vice-Chairperson of the National Executive (2015–17), promoting Indian classical music and culture amongst youth.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-title">Research Assistant &amp; Centre Coordinator</div>
+            <div class="job-org">J.D. Centre of Art · New Delhi, India</div>
+          </div>
+          <div class="job-date">Feb 2013 – Jan 2015</div>
+        </div>
+        <ul class="bullets">
+          <li>Supported the daily administration of a nationally renowned arts trust founded by the acclaimed painter Jatin Das.</li>
+          <li>Played a key role coordinating the International Documentary Film Festival for three consecutive years, working alongside award-winning actress Nandita Das.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-title">Founder &amp; Lead Teacher</div>
+            <div class="job-org">Centurion Public School · Paralakhemundi, Odisha</div>
+          </div>
+          <div class="job-date">2005 – 2007</div>
+        </div>
+        <p>Helped establish a CBSE-affiliated English-medium school in the remote Gajapati district of Odisha — now a major school in the region — managing all aspects of its start-up, from curriculum to operations.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-title">Founder &amp; Lead Teacher</div>
+            <div class="job-org">Akshara Public School · Bhubaneswar, Odisha</div>
+          </div>
+          <div class="job-date">2003 – 2005</div>
+        </div>
+        <p>Set up and ran an English-medium pre-school grounded in multilingual education, overseeing everything from scratch — curriculum design, admissions, staffing and day-to-day care of young children.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-title">Customer Service Representative</div>
+            <div class="job-org">Manpower · Australia</div>
+          </div>
+          <div class="job-date">2000 – 2003</div>
+        </div>
+        <p>Resolved customer enquiries over the phone with clarity, empathy and efficiency.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-title">Bi-lingual Community Educator</div>
+            <div class="job-org">Western Sydney Area Health Service · Sydney, Australia</div>
+          </div>
+          <div class="job-date">1997 – 2000</div>
+        </div>
+        <p>Delivered maternal and child health education to the Indian community, bridging language and cultural gaps.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-title">Assistant Teacher</div>
+            <div class="job-org">Condell Park High School · Sydney, Australia</div>
+          </div>
+          <div class="job-date">1998</div>
+        </div>
+        <p>Worked as a substitute teacher across classrooms, supporting students and staff.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-title">Administrative Assistant</div>
+            <div class="job-org">Fairfield Regional Heritage Centre · Sydney, Australia</div>
+          </div>
+          <div class="job-date">1998</div>
+        </div>
+        <p>Assisted in the administration of a local heritage centre.</p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2>Education</h2>
+
+      <div class="edu">
+        <div>
+          <div class="deg">M.Phil. Applied Linguistics</div>
+          <div class="inst">University of Hyderabad (a Central University) · India</div>
+        </div>
+        <div class="yr">1995 – 1997</div>
+      </div>
+
+      <div class="edu">
+        <div>
+          <div class="deg">M.A. Applied Linguistics</div>
+          <div class="inst">University of Hyderabad (a Central University) · India</div>
+        </div>
+        <div class="yr">1993 – 1995</div>
+      </div>
+
+      <div class="edu">
+        <div>
+          <div class="deg">B.A. Psychology</div>
+          <div class="inst">Sailabala Women's College, Cuttack · India</div>
+        </div>
+        <div class="yr">1989 – 1992</div>
+      </div>
+
+      <div class="edu">
+        <div>
+          <div class="deg">Certificate III in Business Computing</div>
+          <div class="inst">Interim Technology, Parramatta, NSW · Australia</div>
+        </div>
+        <div class="yr">1997 – 1998</div>
+      </div>
+    </section>
+
+    <!-- Skills & Languages -->
+    <section>
+      <h2>Skills &amp; Languages</h2>
+      <div class="cols">
+        <div class="skill-block">
+          <h3>Core Strengths</h3>
+          <div class="chips">
+            <span class="chip">Early-childhood teaching</span>
+            <span class="chip">Multilingual instruction</span>
+            <span class="chip">Phonetics</span>
+            <span class="chip">Play-based learning</span>
+            <span class="chip">School start-up &amp; admin</span>
+            <span class="chip">Curriculum design</span>
+            <span class="chip">Event coordination</span>
+            <span class="chip">Team leadership</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h3>Languages</h3>
+          <div class="lang-list">
+            <div><b>Odia</b> — mother tongue</div>
+            <div><b>English</b> — fluent</div>
+            <div><b>Hindi</b> — fluent</div>
+            <div><b>Bengali</b> — fluent</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interests & Highlights -->
+    <section>
+      <h2>Community Leadership &amp; Interests</h2>
+      <div class="highlight"><span class="dot">•</span><span>Vice-Chairperson, National Executive of SPIC MACAY (2015–17).</span></div>
+      <div class="highlight"><span class="dot">•</span><span>Helped organise two major international conventions — Ravenshaw University, Cuttack (2011) and IIT Kharagpur (2018) — both highly successful events.</span></div>
+      <div class="highlight"><span class="dot">•</span><span>Passionate about word games — an avid Scrabble and Wordle player — bringing playful, language-rich learning into the classroom.</span></div>
+      <div class="highlight"><span class="dot">•</span><span>Interests include music, cooking, interiors and travel across India, Australia, the USA and the UK.</span></div>
+    </section>
+  </main>
+
+  <footer>
+    References available upon request &nbsp;·&nbsp; Nationality: Australian (Overseas Citizen of India)
+  </footer>
+</div>
+</body>
+</html>
