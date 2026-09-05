@@ -58,6 +58,22 @@
     max-width: 60ch;
     color: #eaf6f5;
   }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .header-text { flex: 1 1 auto; min-width: 0; }
+  .photo {
+    width: 122px;
+    height: 122px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  }
   .contact {
     display: flex;
     flex-wrap: wrap;
@@ -188,6 +204,7 @@
     .job-head, .edu { flex-direction: column; gap: 2px; }
     .job-date, .edu .yr { white-space: normal; }
     .cols { grid-template-columns: 1fr; }
+    .header-inner { flex-direction: column; align-items: flex-start; gap: 18px; }
   }
 </style>
 </head>
@@ -196,9 +213,14 @@
 
 <div class="page">
   <header>
-    <h1>Babita Mishra</h1>
-    <div class="role">Educator &nbsp;·&nbsp; Applied Linguist &nbsp;·&nbsp; School Founder</div>
-    <div class="tagline">Multilingual educator specialising in play-based, phonetics-led language teaching — building confident, curious learners through games, song and story.</div>
+    <div class="header-inner">
+      <div class="header-text">
+        <h1>Babita Mishra</h1>
+        <div class="role">Educator &nbsp;·&nbsp; Applied Linguist &nbsp;·&nbsp; School Founder</div>
+        <div class="tagline">Multilingual educator specialising in play-based, phonetics-led language teaching — building confident, curious learners through games, song and story.</div>
+      </div>
+      <img class="photo" src="photo.jpg" alt="Babita Mishra" />
+    </div>
   </header>
 
   <main>
